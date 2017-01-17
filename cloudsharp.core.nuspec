@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>cloudsharp.core</id>
+    <version>1.0.0</version>
+    <authors>lmaitland</authors>
+    <owners>lmaitland</owners>
+    <licenseUrl>https://github.com/lewisgcm/cloudsharp.core/LICENSE.md</licenseUrl>
+    <projectUrl>https://github.com/lewisgcm/cloudsharp.core</projectUrl>
+    <iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>CloudSharp core packages</description>
+    <releaseNotes>Initial release of cloudharp core</releaseNotes>
+    <copyright>Copyright 2017</copyright>
+    <tags>Cloud Generic</tags>
+    <dependencies>
+      <dependency id="SampleDependency" version="1.0" />
+    </dependencies>
+  </metadata>
+</package>
