@@ -5,7 +5,7 @@ using System.Threading.Tasks;
  * (C) Lewis Maitland 2017
  * Generic Async Service interface. 
 */
-namespace CloudSharp.Core.Service
+namespace CloudSharp.Service
 {
     public interface IService<ID, Model> where Model : class
     {

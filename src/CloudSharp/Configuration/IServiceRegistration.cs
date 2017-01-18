@@ -2,7 +2,7 @@
 using System;
 using System.Net.Http;
 
-namespace CloudSharp.Core.Configuration {
+namespace CloudSharp.Configuration {
     public interface IServiceRegistration<Model> {
         Uri GetService { get; }
 

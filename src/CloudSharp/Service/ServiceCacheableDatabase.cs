@@ -1,7 +1,7 @@
 using System.Threading.Tasks;
-using CloudSharp.Core.Model;
+using CloudSharp.Model;
 
-namespace CloudSharp.Core.Service
+namespace CloudSharp.Service
 {
     public class ServiceCacheableDatabase<ID, Model> : ServiceDatabase<ID, Model>, IService<ID, Model> where Model : class, IEntity<ID>
     {

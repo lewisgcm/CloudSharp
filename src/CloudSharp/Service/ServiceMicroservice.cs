@@ -2,10 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
-using CloudSharp.Core.Model;
-using CloudSharp.Core.Configuration;
+using CloudSharp.Model;
+using CloudSharp.Configuration;
 
-namespace CloudSharp.Core.Service {
+namespace CloudSharp.Service {
 
     public class ServiceMicroservice<ID, Model> : IService<ID, Model> 
         where Model : class, IEntity<ID>

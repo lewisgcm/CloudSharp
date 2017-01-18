@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 
-namespace CloudSharp.Core.Service
+namespace CloudSharp.Service
 {
     public interface IDbContext : IDisposable
     {

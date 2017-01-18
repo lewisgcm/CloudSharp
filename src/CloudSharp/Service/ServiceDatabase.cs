@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 
-namespace CloudSharp.Core.Service
+namespace CloudSharp.Service
 {
     public class ServiceDatabase<ID, Model> : IService<ID, Model> where Model : class
     {

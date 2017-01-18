@@ -2,9 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Web.Http;
-using CloudSharp.Core.Service;
+using CloudSharp.Service;
 using Microsoft.AspNetCore.Mvc;
-using Service;
 
 namespace Web.Controllers
 {
@@ -32,7 +31,7 @@ namespace Web.Controllers
             Model model = await _service.Get(id);
             if (model == null)
             {
-                return NotFound( new HttpError() { Message = $"Could not find the specified resource." } );
+                return NotFound( $"Could not find the specified resource." );
             }
             return Ok(model);
         }
@@ -43,9 +42,7 @@ namespace Web.Controllers
         {
             if (!ModelState.IsValid)
             {
-                var error = new HttpError() { Message = "Validation Error" };
-                error["errors"] = ModelState;
-                return BadRequest( error );
+                return BadRequest( "Error" );
             }
 
             try
@@ -65,9 +62,7 @@ namespace Web.Controllers
         {
             if( !ModelState.IsValid )
             {
-                var error = new HttpError() { Message = "Validation Error" };
-                error[ "validation" ] = ModelState;
-                return BadRequest( error );
+                return BadRequest( "Error" );
             }
 
             try

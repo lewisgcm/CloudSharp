@@ -1,6 +1,6 @@
 using System.Threading.Tasks;
 
-namespace CloudSharp.Core.Service
+namespace CloudSharp.Service
 {
     public interface ICache<ID, Model> where Model : class
     {
