@@ -4,3 +4,5 @@ bin
 obj
 *bin*
 *obj*
+project.lock.json
+**/project.lock.json
