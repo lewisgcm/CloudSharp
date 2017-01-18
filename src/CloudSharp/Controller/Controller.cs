@@ -1,7 +1,6 @@
 using System;
-using System.Collections.Generic;
+using System.Net;
 using System.Threading.Tasks;
-using System.Web.Http;
 using CloudSharp.Service;
 using Microsoft.AspNetCore.Mvc;
 
@@ -38,54 +37,54 @@ namespace Web.Controllers
 
         // POST api/values
         [HttpPost]
-        public IActionResult Post([FromBody]Model value)
+        public async Task<IActionResult> Post([FromBody]Model value)
         {
             if (!ModelState.IsValid)
             {
-                return BadRequest( "Error" );
+                return StatusCode( 422, ModelState );
             }
 
             try
             {
-                var model = _service.Create(value);
+                var model = await _service.Create(value);
                 return Ok(model);
             }
             catch (Exception e)
             {
-                return BadRequest(e);
+                return StatusCode( (int)HttpStatusCode.InternalServerError, e);
             }
         }
 
         // PUT api/values/5
         [HttpPut("{id}")]
-        public IActionResult Put(ID id, [FromBody]Model value)
+        public async Task<IActionResult> Put(ID id, [FromBody]Model value)
         {
             if( !ModelState.IsValid )
             {
-                return BadRequest( "Error" );
+                return StatusCode( 422, ModelState );
             }
 
             try
             {
-                var model = _service.Get( id );
+                var model = await _service.Get( id );
                 if (model == null)
                 {
                     return NotFound();
                 }
 
-                return Ok( _service.Update(id, value) );
+                return Ok( await _service.Update(id, value) );
             }
             catch( Exception e )
             {
-                return BadRequest( e );
+                return StatusCode( (int)HttpStatusCode.InternalServerError, e);
             }
         }
 
         // DELETE api/values/5
         [HttpDelete("{id}")]
-        public void Delete(ID id)
+        public async Task<bool> Delete(ID id)
         {
-            _service.Delete(id);
+            return await _service.Delete(id);
         }
     }
 }
