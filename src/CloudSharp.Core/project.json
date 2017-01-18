@@ -1,10 +1,11 @@
 {
-  "version": "1.0.0-*",
+  "version": "1.0.1-*",
   "dependencies": {
     "Microsoft.EntityFrameworkCore": "1.1.0",
     "NETStandard.Library": "1.6.1",
     "System.Net.Http": "4.1.0",
-    "Microsoft.AspNet.WebApi.Client": "5.2.3"
+    "Microsoft.AspNet.WebApi.Client": "5.2.3",
+    "Microsoft.AspNetCore.Mvc": "1.1.0"
   },
   "frameworks": {
     "netstandard1.6": {

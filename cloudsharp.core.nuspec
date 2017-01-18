@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>CloudSharp.Core</id>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <authors>lmaitland</authors>
     <owners>lmaitland</owners>
     <licenseUrl>https://github.com/lewisgcm/cloudsharp.core/LICENSE.md</licenseUrl>
