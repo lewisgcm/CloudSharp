@@ -5,15 +5,15 @@ using System.Threading.Tasks;
 using CloudSharp.Model;
 using CloudSharp.Configuration;
 
-namespace CloudSharp.Service {
+namespace CloudSharp.Repository {
 
-    public class ServiceMicroservice<ID, Model> : IService<ID, Model> 
+    public class MicroserviceRepository<ID, Model> : IRepository<ID, Model> 
         where Model : class, IEntity<ID>
     {
         private IServiceRegistration<Model> _serviceRegistration;
         private HttpClient _client;
 
-        public ServiceMicroservice(IServiceRegistration<Model> serviceRegistration) {
+        public MicroserviceRepository(IServiceRegistration<Model> serviceRegistration) {
             _serviceRegistration = serviceRegistration;
             _client = new HttpClient( _serviceRegistration.Handler );
         }

@@ -1,13 +1,14 @@
 using System.Threading.Tasks;
+using CloudSharp.Configuration;
 using CloudSharp.Model;
 
-namespace CloudSharp.Service
+namespace CloudSharp.Repository
 {
-    public class ServiceCacheableDatabase<ID, Model> : ServiceDatabase<ID, Model>, IService<ID, Model> where Model : class, IEntity<ID>
+    public class CachedDatabaseRepository<ID, Model> : DatabaseRepository<ID, Model>, IRepository<ID, Model> where Model : class, IEntity<ID>
     {
         private ICache<ID, Model> _cache;
 
-        public ServiceCacheableDatabase(IDbContext context, ICache<ID, Model> cache)
+        public CachedDatabaseRepository(IDbContext context, ICache<ID, Model> cache)
             : base( context )
         {
             _cache = cache;

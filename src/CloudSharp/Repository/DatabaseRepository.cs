@@ -2,15 +2,16 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CloudSharp.Configuration;
 using Microsoft.EntityFrameworkCore;
 
-namespace CloudSharp.Service
+namespace CloudSharp.Repository
 {
-    public class ServiceDatabase<ID, Model> : IService<ID, Model> where Model : class
+    public class DatabaseRepository<ID, Model> : IRepository<ID, Model> where Model : class
     {
         private readonly IDbContext _context;
 
-        public ServiceDatabase( IDbContext context )
+        public DatabaseRepository( IDbContext context )
         {
             this._context = context;
         }

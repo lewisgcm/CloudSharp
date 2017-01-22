@@ -3,14 +3,15 @@ using System.Threading.Tasks;
 using CloudSharp.Model;
 using CloudSharp.Configuration;
 
-namespace CloudSharp.Service {
+namespace CloudSharp.Repository {
 
-    public class ServiceCacheableMicroservice<ID, Model> : ServiceMicroservice<ID, Model>, IService<ID, Model> 
+    public class CachedMicroserviceRepository<ID, Model>
+        : MicroserviceRepository<ID, Model>, IRepository<ID, Model> 
         where Model : class, IEntity<ID>
     {
         private ICache<ID, Model> _cache;
         
-        public ServiceCacheableMicroservice(
+        public CachedMicroserviceRepository(
             IServiceRegistration<Model> serviceRegistration,
             ICache<ID, Model> cache
         )
